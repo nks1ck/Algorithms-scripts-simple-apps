@@ -2,7 +2,7 @@
 import sys
 import random
 
-# Pylint 9.38 / 10
+# Pylint 9.44 / 10
 def main():
     """Randomly select names from 2 tuples of names"""
     print("Hello, it's a funny name generator")
@@ -23,6 +23,8 @@ def main():
              'Skidmark', 'Slaps', 'Snakes', 'Snoobs', 'Snorki',
              'Soupcan Sam', 'Spitzitout’, ’Squids', 'Stinky', 'Storyboard',
              'Sweet Tea', 'TeeTee', 'Wheezy Joe', 'Winston' 'Jazz Hands', 'Worms')
+
+    middle = ('Cox', 'Phfaer', 'Everret', 'Ivasishin', 'Boke')
 
     second = ('Appleyard', 'Bigmeat', 'Bloominshine', 'Boogerbottom',
               'Breedslovetrout', 'Butterbaugh', 'Clovenhoof', 'Clutterbuck',
@@ -45,9 +47,11 @@ def main():
 
         last_name = random.choice(second)
 
+        middle_name = random.choice(middle)
+
         print("\n\n")
 
-        print("{} {}".format(first_name, last_name), file=sys.stderr)
+        print("{} {} {}".format(first_name, middle_name, last_name), file=sys.stderr)
 
         try_again = input(
             "\n\nWill you try again? Enter for continue, N for exit\n")
