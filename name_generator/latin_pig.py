@@ -6,16 +6,17 @@ consonants = ('b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', '
 # Гласные
 vowels = ('a', 'e', 'i', 'o', 'u')
 
-string = input("Enter a word: ")
+while True:
+    string = input("Enter a word: ")
 
-for item in consonants:
-    if item == string[0]:
-        string = string[1:] + item + "ay"
-        print(string)
-        break
+    for item in consonants:
+        if item == string[0]:
+            string = string[1:] + item + "ay"
+        else:
+            string += "way"
 
-for var in vowels:
-    if var == string[0]:
-        string += "way"
-        print(string)
+    print("{}".format(string))
+    try_again = input("\n\nWill you try again? Enter for continue, N for exit\n")
+
+    if try_again.lower() == "n":
         break
