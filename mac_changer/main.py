@@ -1,5 +1,10 @@
 import subprocess
 
-subprocess.call('ifconfig wlan0 down', shell=True)
-subprocess.call('ifconfig wlan0 hw ether 11:32:23:79:39:54', shell=True)
-subprocess.call('ifconfig wlan0 up', shell=True)
+interface = raw_input('Interface: ')
+new_mac = raw_input('New MAC address: ')
+
+print(f"[!] Changing MAC address for {interface} to {new_mac}")
+
+subprocess.call(['ifconfig', interface, 'down'])
+subprocess.call(['ifconfig', interface, 'hw', 'ether', new_mac])
+subprocess.call(['ifconfig', interface, 'up'])
