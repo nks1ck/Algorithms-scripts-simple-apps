@@ -1,0 +1,1 @@
+./setFH.sh in a terminal
