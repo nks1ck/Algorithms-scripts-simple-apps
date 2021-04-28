@@ -21,7 +21,7 @@ def md5_brut(hash, dict):
             print(f"[*] Легко. Пароль => {password}")
             break
         else:
-            pass
+            print(f"[*] Пробую {password}")
 
     print(f'Время выполнения - {time.time() - start_time}')
 
