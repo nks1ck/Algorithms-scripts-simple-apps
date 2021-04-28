@@ -1,4 +1,5 @@
 import hashlib
+import time
 
 
 hash = input('[*] Хэш => ')
@@ -12,6 +13,7 @@ def md5_brut(hash, dict):
         exit()
 
 
+    start_time = time.time()
     for password in descript:
         filemd5 = hashlib.md5(password.encode().strip()).hexdigest()
 
@@ -19,7 +21,9 @@ def md5_brut(hash, dict):
             print(f"[*] Легко. Пароль => {password}")
             break
         else:
-            print("[*] Ой..")
+            pass
+
+    print(f'Время выполнения - {time.time() - start_time}')
 
 
 md5_brut(hash, dict)
